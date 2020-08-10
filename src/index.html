@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/angular-material/angular-material.min.css"
+    />
+    <link rel="stylesheet" href="./public/css/styles.css" />
+    <title>Angular Notes</title>
+  </head>
+
+  <body ng-app="myApp" layout="column" ng-cloack ng-controller="MainController">
+    <md-toolbar class="header">
+      <div class="headerTitle" layout="row" flex>
+        <md-icon md-svg-src="./assets/icons/note.svg"></md-icon>
+        <h1>Angular Notes</h1>
+      </div>
+    </md-toolbar>
+
+    <div class="container" layout="row" flex>
+      <md-sidenav
+        md-is-locked-open="true"
+        class="sideCategories md-whiteframe-2dp"
+      >
+        <h3>Ferramentas</h3>
+
+        <div layout="column">
+          <md-button class="md-primary">Notes</md-button>
+          <md-button class="md-primary">To Do list</md-button>
+        </div>
+      </md-sidenav>
+
+      <md-content layout="column" class="content" flex>
+        <div class="inputs" layout="row">
+          <md-input-container flex>
+            <label for="toDo">Adicionar item</label>
+            <input type="text" name="toDo" ng-model="task" />
+          </md-input-container>
+
+          <md-button class="md-raised md-primary btnAdd" ng-click="addTask()"
+            >+ Adicionar</md-button
+          >
+        </div>
+
+        <ul>
+          <li ng-repeat="task in taskList">
+            <md-checkbox
+              class="md-primary"
+              ng-model="isChecked"
+              aria-label="Tarefa 1"
+              md-no-ink
+            >
+              <p>{{task.task}}</p>
+            </md-checkbox>
+          </li>
+        </ul>
+      </md-content>
+    </div>
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="../node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="../node_modules/angular-material/angular-material.min.js"></script>
+    <script src="./public/js/notes-app.start.js"></script>
+  </body>
+</html>
