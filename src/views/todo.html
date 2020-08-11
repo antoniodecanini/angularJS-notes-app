@@ -1,0 +1,25 @@
+<div class="todo">
+  <div class="inputs" layout="row">
+    <md-input-container flex>
+      <label for="toDo">Adicionar item</label>
+      <input type="text" name="toDo" ng-model="task" />
+    </md-input-container>
+
+    <md-button class="md-raised md-primary btnAdd" ng-click="addTask()"
+      >+ Adicionar</md-button
+    >
+  </div>
+
+  <ul>
+    <li ng-repeat="task in taskList">
+      <md-checkbox
+        class="md-primary"
+        ng-model="isChecked"
+        aria-label="{{task.task}}"
+        md-no-ink
+      >
+        <p>{{task.task}}</p>
+      </md-checkbox>
+    </li>
+  </ul>
+</div>

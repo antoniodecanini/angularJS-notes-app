@@ -46,3 +46,29 @@ md-checkbox p {
   margin-top: 2px;
   padding: 0;
 }
+
+/*HOME CONTAINER*/
+.homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.homeContainer h2 {
+  margin: 0;
+  padding: 0;
+  color: #555;
+}
+
+.homeContainer h1 {
+  margin: 10px 0;
+  padding: 0;
+  color: #3f51b5;
+  letter-spacing: 2px;
+}
+
+.homeContainer p {
+  margin-top: 10px;
+}

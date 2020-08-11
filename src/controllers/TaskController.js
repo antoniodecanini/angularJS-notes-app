@@ -1,7 +1,7 @@
-const app = angular.module("myApp", ["ngMaterial", "ngMessages"]);
+var app = angular.module('TaskController', []);
 
-app.controller("MainController", ($scope) => {
-  $scope.task = "";
+app.controller('CreateTask', function ($scope) {
+  $scope.task = '';
 
   $scope.taskList = [];
 
@@ -20,14 +20,14 @@ app.controller("MainController", ($scope) => {
   }
 
   function addTask(id) {
-    if ($scope.task === "") {
-      return alert("Campo adicionar item, não pode estar vazio");
+    if ($scope.task === '') {
+      return alert('Campo adicionar item, não pode estar vazio');
     }
     $scope.taskList = [
       ...$scope.taskList,
       { id: id, task: $scope.task, isChecked: false },
     ];
-    $scope.task = "";
+    $scope.task = '';
   }
 
   function handleAddTask() {
