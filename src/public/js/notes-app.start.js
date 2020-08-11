@@ -5,14 +5,33 @@ app.controller("MainController", ($scope) => {
 
   $scope.taskList = [];
 
-  function addTask() {
+  function generateId(taskList) {
+    let newId;
+
+    if (taskList.length === 0) {
+      newId = 1;
+    } else {
+      const lastTask = taskList.length - 1;
+      const lastId = taskList[lastTask].id;
+      newId = lastId + 1;
+    }
+
+    return newId;
+  }
+
+  function addTask(id) {
     $scope.taskList = [
       ...$scope.taskList,
-      { id: 0, task: $scope.task, isChecked: false },
+      { id: id, task: $scope.task, isChecked: false },
     ];
     $scope.task = "";
+  }
+
+  function handleAddTask() {
+    const id = generateId($scope.taskList);
+    addTask(id);
     console.log($scope.taskList);
   }
 
-  $scope.addTask = addTask;
+  $scope.addTask = handleAddTask;
 });
