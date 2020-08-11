@@ -20,6 +20,9 @@ app.controller("MainController", ($scope) => {
   }
 
   function addTask(id) {
+    if ($scope.task === "") {
+      return alert("Campo adicionar item, não pode estar vazio");
+    }
     $scope.taskList = [
       ...$scope.taskList,
       { id: id, task: $scope.task, isChecked: false },
@@ -30,7 +33,6 @@ app.controller("MainController", ($scope) => {
   function handleAddTask() {
     const id = generateId($scope.taskList);
     addTask(id);
-    console.log($scope.taskList);
   }
 
   $scope.addTask = handleAddTask;
