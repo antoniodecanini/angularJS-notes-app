@@ -9,7 +9,7 @@ var app = angular.module('App', [
 app.config(function ($stateProvider) {
   var homeState = {
     name: 'home',
-    url: '/',
+    url: '',
     templateUrl: './views/home.html',
   };
 
@@ -17,6 +17,7 @@ app.config(function ($stateProvider) {
     name: 'notes',
     url: '/notes',
     templateUrl: './views/notes.html',
+    controller: 'CreateNote',
   };
 
   var todoState = {

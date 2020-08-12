@@ -1,1 +1,20 @@
-<div>Notes</div>
+<div class="notes">
+  <div layout="row" class="inputs">
+    <md-input-container flex>
+      <label for="note">Adicionar nota</label>
+      <textarea name="note" class="md-input" ng-model="note"></textarea>
+    </md-input-container>
+
+    <md-button class="md-raised md-primary btnAdd" ng-click="addNote()"
+      >+ Adicionar</md-button
+    >
+  </div>
+
+  <ul>
+    <li ng-repeat="note in noteList" class="md-whiteframe-2dp">
+      <p>
+        {{note.note}}
+      </p>
+    </li>
+  </ul>
+</div>
